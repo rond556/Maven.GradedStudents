@@ -31,14 +31,34 @@ public class ClassroomTest {
 
     @Test
     public void getStudentsTest() {
+        Student gogo = new Student(null,null,null);
+        Student[] expected = {gogo};
+        Classroom classroom = new Classroom(1, null);
+
+        classroom.setStudents(expected);
+        Student[] actual = classroom.getStudents();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void setStudentsTest() {
+        Student gogo = new Student(null,null,null);
+        Student[] expected = {gogo};
+        Classroom classroom = new Classroom(1, null);
+
+        classroom.setStudents(expected);
+        Student[] actual = classroom.getStudents();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void addStudentsTest() {
+        Student gogo = new Student(null,null,null);
+        Student[] expected = {gogo};
+        Classroom expectedClassroom = new Classroom(1, expected);
+        Classroom actualClassroom = new Classroom(1,null);
+        actualClassroom.addStudents(gogo, );
+        Assert.assertEquals(());
     }
 
     @Test

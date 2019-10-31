@@ -38,14 +38,14 @@ public class StudentTest {
 
     @Test
     public void setFirstName() {
+Student gogo = new Student(null,null,null);
+        Student[] expected = {gogo};
+        Classroom classroom = new Classroom(1, null);
 
-        Student student = new Student(null, null,null);
-        String expected = "Edgar";
+        classroom.setStudents(expected);
+        Student[] actual = classroom.getStudents();
 
-        student.setFirstName(expected);
-        String actual = student.getFirstName();
-
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
