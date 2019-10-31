@@ -15,7 +15,7 @@ public class Classroom {
         this.students = new Student[maxNumberOfStudents];
     }
 
-    public Classroom(Student[]students){
+    public Classroom(){
         this.students = new Student[30];
     }
 
@@ -36,9 +36,9 @@ public class Classroom {
         students.remove(removedStudent);
     }
 
-    public Student[] getStudentsByScore(Student[] students){
-        return Arrays.sort(students, Collections.reverseOrder(students));
-    }
+    //public Student[] getStudentsByScore(Student[] students){
+      //  return Arrays.sort(students, Collections.reverseOrder(students));
+    //}
 
 
 }

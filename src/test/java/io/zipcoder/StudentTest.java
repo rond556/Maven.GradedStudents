@@ -13,14 +13,14 @@ public class StudentTest {
         String expectedFirstName = "Edgar";
         String expectedLastName = "Figaro";
         ArrayList<Double> expectedScores = new ArrayList<>(Arrays.asList(100. , 100.0, 98.0, 96.0));
-        Student student = new Student("Edgar", "Figaro", expectedScores);
+        Student student = new Student(expectedFirstName, expectedLastName, expectedScores);
 
         String actualFirstName = student.getFirstName();
         String actualLastName = student.getLastName();
         ArrayList<Double> actualScores = student.getExamScores();
 
         Assert.assertEquals(expectedFirstName, actualFirstName);
-        Assert.assertEquals(expectedLastName, expectedLastName);
+        Assert.assertEquals(expectedLastName, actualLastName);
         Assert.assertEquals(expectedScores, actualScores);
 
     }
@@ -132,8 +132,33 @@ public class StudentTest {
 
         String expected = sb.toString();
         String actual = student.printExamScores(actualTest);
+    }
 
+    @Test
+    public void getAverageExamScoresTest(){
+        ArrayList<Double> examScores = new ArrayList<>(Arrays.asList(94.0 , 100.0, 98.0, 96.0));
+        Student student = new Student(null,null,examScores);
+        Double sum = 0.0;
+        Integer count = 0;
+        for(Double score:examScores){
+            sum+= examScores.get(count);
+            count++;
+        }
 
+        Double expected = sum/examScores.size();
+        Double actual = student.getAverageExamScores(examScores);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void compareTo(){
+        ArrayList<Double> examScores1 = new ArrayList<>(Arrays.asList(94.0 , 100.0, 98.0, 100.0));
+        ArrayList<Double> examScores2 = new ArrayList<>(Arrays.asList(97.0 , 98.0, 91.0, 92.0));
+        Student student1 = new Student(null,null, examScores1);
+        Student student2 = new Student(null,null, examScores2);
+        Integer expected = Double.compare(student1.getAverageExamScores(examScores1), student2.getAverageExamScores(examScores2));
+        Integer actual = student1.compareTo(student2, examScores2);
+        Assert.assertEquals(expected,actual);
 
     }
 }
