@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +28,8 @@ public class Classroom {
         this.students = students;
     }
 
-    public void addStudents(Student student, List<Student> students){
-        students.add(student);
+    public static void addStudents(Student student, List<Student> students){
+
     }
 
     public void removeStudent(String firstName, String lastName, List<Student> students){
@@ -37,7 +38,7 @@ public class Classroom {
     }
 
     //public Student[] getStudentsByScore(Student[] students){
-      //  return Arrays.sort(students, Collections.reverseOrder(students));
+      //return Arrays.sort(students, Collections.reverseOrder(students));
     //}
 
 

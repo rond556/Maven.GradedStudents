@@ -56,9 +56,10 @@ public class ClassroomTest {
         Student gogo = new Student(null,null,null);
         Student[] expected = {gogo};
         Classroom expectedClassroom = new Classroom(1, expected);
+
         Classroom actualClassroom = new Classroom(1,null);
-        actualClassroom.addStudents(gogo, );
-        Assert.assertEquals(());
+        Classroom.addStudents(gogo, expected);
+        Assert.assertEquals(expectedClassroom,actualClassroom);
     }
 
     @Test
