@@ -146,18 +146,18 @@ Student gogo = new Student(null,null,null);
         }
 
         Double expected = sum/examScores.size();
-        Double actual = student.getAverageExamScores(examScores);
+        Double actual = student.getAverageExamScores();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
-    public void compareTo(){
+    public void compareToTest(){
         ArrayList<Double> examScores1 = new ArrayList<>(Arrays.asList(94.0 , 100.0, 98.0, 100.0));
         ArrayList<Double> examScores2 = new ArrayList<>(Arrays.asList(97.0 , 98.0, 91.0, 92.0));
         Student student1 = new Student(null,null, examScores1);
         Student student2 = new Student(null,null, examScores2);
-        Integer expected = Double.compare(student1.getAverageExamScores(examScores1), student2.getAverageExamScores(examScores2));
-        Integer actual = student1.compareTo(student2, examScores2);
+        Integer expected = Double.compare(student1.getAverageExamScores(), student2.getAverageExamScores());
+        Integer actual = student1.compareTo(student2);
         Assert.assertEquals(expected,actual);
 
     }

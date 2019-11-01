@@ -53,16 +53,27 @@ public class ClassroomTest {
 
     @Test
     public void addStudentsTest() {
-        Student gogo = new Student(null,null,null);
-        Student[] expected = {gogo};
-        Classroom expectedClassroom = new Classroom(1, expected);
+        Student gogo = new Student("Gogo","Gogo",null);
+        Student[] actualArray = new Student[1];
+        Classroom actualClassroom = new Classroom(1,actualArray);
+        actualClassroom.addStudents(gogo);
 
-        Classroom actualClassroom = new Classroom(1,null);
-        Classroom.addStudents(gogo, expected);
-        Assert.assertEquals(expectedClassroom,actualClassroom);
+
+        Assert.assertTrue(actualClassroom.getStudents()[0] != null);
     }
 
     @Test
     public void removeStudentTest() {
+        Student gogo = new Student("Gogo","Gogo",null);
+        Student[] actualArray = new Student[1];
+        Classroom actualClassroom = new Classroom(1,actualArray);
+        actualClassroom.addStudents(gogo);
+        actualClassroom.removeStudent("Gogo", "Gogo");
+
+
+        Assert.assertTrue(actualClassroom.getStudents()[0] == null);
     }
-}
+
+    @Test
+    public void getStudentsByScore
+    }

@@ -28,18 +28,28 @@ public class Classroom {
         this.students = students;
     }
 
-    public static void addStudents(Student student, List<Student> students){
-
+    public void addStudents(Student student){
+        for(int i = 0; i < students.length; i++){
+            if(this.students[i] == null){
+                this.students[i] = student;
+                break;
+            }
+        }
     }
 
-    public void removeStudent(String firstName, String lastName, List<Student> students){
+    public void removeStudent(String firstName, String lastName){
         Student removedStudent = new Student(firstName, lastName, null);
-        students.remove(removedStudent);
+        for(int i = 0; i < students.length; i++){
+            if(students[i].getFirstName().equals(removedStudent.getFirstName())
+            && students[i].getLastName().equals(removedStudent.getLastName())){
+                students[i] = null;
+            }
+        }
     }
 
-    //public Student[] getStudentsByScore(Student[] students){
-      //return Arrays.sort(students, Collections.reverseOrder(students));
-    //}
+    public void getStudentsByScore(Student[] students) {
+        Arrays.sort(students, Collections.reverseOrder());
+    }
 
 
 }
