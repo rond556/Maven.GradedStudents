@@ -75,5 +75,16 @@ public class ClassroomTest {
     }
 
     @Test
-    public void getStudentsByScore
+    public void getStudentsByScore(){
+        Student gogo = new Student("gogo", null,null);
+        Student umaro = new Student("umaro", null, null);
+        Student moogle = new Student("moogle", null, null);
+        Student[] students = {gogo, umaro, moogle};
+        Classroom actualClassroom = new Classroom(3,students);
+        actualClassroom.getStudentsByScore(students);
+
+        Assert.assertEquals
+
+
+    }
     }
