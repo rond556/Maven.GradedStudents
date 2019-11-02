@@ -38,7 +38,7 @@ public class StudentTest {
 
     @Test
     public void setFirstName() {
-Student gogo = new Student(null,null,null);
+        Student gogo = new Student(null,null,null);
         Student[] expected = {gogo};
         Classroom classroom = new Classroom(1, null);
 
