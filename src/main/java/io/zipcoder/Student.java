@@ -60,7 +60,7 @@ public class Student implements Comparable<Student>{
     }
 
     public double getAverageExamScores(){
-        double sum = 0.0;
+        double sum = 0D;
         for(int i = 0; i <= examScores.size() - 1; i++){
             sum += examScores.get(i);
         }

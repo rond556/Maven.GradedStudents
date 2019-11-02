@@ -1,9 +1,6 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Classroom {
     private Student[] students;
@@ -12,8 +9,9 @@ public class Classroom {
         this.students = new Student[maxNumberOfStudents];
     }
 
+
     public Classroom(int maxNumberOfStudents, Student[] students){
-        this.students = new Student[maxNumberOfStudents];
+        this.students = students;
     }
 
     public Classroom(){
@@ -47,9 +45,27 @@ public class Classroom {
         }
     }
 
-    public void getStudentsByScore(Student[] students) {
+    public void getStudentsByScore() {
         Arrays.sort(students, Collections.reverseOrder());
     }
 
+    public Map getGradeBook(){
+        TreeMap<String, Student> map = new TreeMap<>();
+        for(int i = 0; i < students.length;i++){
+            if(students[i].getAverageExamScores()/100 > .9){
+                map.put("A",students[i]);
+            } else if (students[i].getAverageExamScores()/100 <= .9 && students[i].getAverageExamScores()/100 > .7){
+                map.put("B",students[i]);
+            } else if (students[i].getAverageExamScores()/100 <= .7 && students[i].getAverageExamScores()/100 > .5){
+                map.put("C",students[i]);
+            } else if (students[i].getAverageExamScores()/100 <= .5 && students[i].getAverageExamScores()/100 > .1){
+                map.put("D",students[i]);
+            } else if (students[i].getAverageExamScores()/100 <= .1){
+                map.put("F",students[i]);
+            }
+        }
+
+        return map;
+    }
 
 }
